@@ -5,12 +5,11 @@ from dotenv import load_dotenv
 from telethon import TelegramClient, events, types
 from telethon.sessions import StringSession
 
-load_dotenv(os.path.expanduser("~/bot-analyzer/bot_analyzer.env"))
 
-API_ID = int(os.getenv("API_ID"))
-API_HASH = os.getenv("API_HASH")
-SESSION_B64 = os.getenv("SESSION_B64")
-BOT_TOKEN = os.getenv("BOT_TOKEN")
+API_ID = int(os.environ["API_ID"])
+API_HASH = os.environ["API_HASH"]
+SESSION_B64 = os.environ["SESSION_B64"]
+BOT_TOKEN = os.environ["BOT_TOKEN"]
 
 user_client = TelegramClient(StringSession(SESSION_B64), API_ID, API_HASH)
 bot = TelegramClient("bot_analyzer_session", API_ID, API_HASH)
